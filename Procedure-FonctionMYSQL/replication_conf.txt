@@ -1,0 +1,21 @@
+######################      CONFIGURATION DU MAITRE    < SECTION Réplication maître >    ######################################
+
+# DANS LE CAS DE XAMPP LA CREATION DE CES INSTRUCTIONS EST AUTOMATIQUE LORS DE LA CREATION DU MAITRE;  On copie ceci, on colle dans le fichier My.ini 
+#server-id=1829309         Dans le cas de XAMPP
+log-bin=mysql-bin
+#log-error=mysql-bin.err   Dans le cas de XAMPP
+binlog_do_db=study
+
+######################      CONFIGURATION DE L'ESCLAVE < SECTION Réplication esclave >   ######################################
+
+# Cliquer sur < Changer ou reconfigurer le serveur maitre >
+# Entrer les parametres de l'utilisateur distribué qui a été crée sur la machine esclave
+# Supposons que la machine esclave est de nom : < daniel >  et un utilisateur daniel@'%' de mot de passe :  succes
+# Entrer ces parametres dans cette section; NB : copier d'abord ceci : server-id=1465994118
+# Coller dans le fichier My.ini à coté de server-id=1; Naturellement commentez ceci
+# Redemarre le serveur ; Raffraichir PhpMyAdmin
+# Ensuite Rentrer les infos de la machine esclave
+# cliquer sur < Contrôler le serveur esclave > -> < Arrêter seulement le fil d'exécution SQL > Pour enlever le Warning 1
+# Enfin sur < Contrôler le serveur esclave > -> < Arrêter seulement le fil d'exécution des entrées-sorties > Pour enlever le Warning 2
+  
+
